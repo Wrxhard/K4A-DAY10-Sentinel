@@ -4,15 +4,15 @@
 
 ## 1. Thông tin cá nhân
 
-| Thông tin         | Nội dung                  |
-| ------------------ | -------------------------- |
-| Họ và tên       | [Họ và tên]             |
-| MSSV               | [MSSV]                     |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Vai trò chính    | [Vai trò]                 |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Thông tin         | Nội dung                                                                             |
+| ------------------ | ------------------------------------------------------------------------------------- |
+| Họ và tên       | Nguyễn Triều Vương                                                                |
+| MSSV               | 2A202602422                                                                           |
+| Khóa/Lớp         | K4                                                                                    |
+| Tên nhóm         | Sentinel                                                                              |
+| Vai trò chính    | Observability & Evaluation Lead                                                       |
+| Repository         | [github.com/Wrxhard/K4A-DAY10-Sentinel](https://github.com/Wrxhard/K4A-DAY10-Sentinel) |
+| Ngày hoàn thành | 2026-09-25                                                                            |
 
 ## 2. Vai trò và phạm vi công việc
 
@@ -27,16 +27,16 @@ Chỉ nhận ownership cho phần bạn trực tiếp thực hiện. Liên hệ 
 
 ### Việc hỗ trợ ngoài phạm vi chính
 
-| Hoạt động                         | Thành viên/module được hỗ trợ | Kết quả                    |
-| ------------------------------------ | ------------------------------------ | ---------------------------- |
-| [Debug/tích hợp/tài liệu] | [Tên hoặc module] | [Kết quả và bằng chứng] |
+| Hoạt động                  | Thành viên/module được hỗ trợ | Kết quả                    |
+| ----------------------------- | ------------------------------------ | ---------------------------- |
+| [Debug/tích hợp/tài liệu] | [Tên hoặc module]                  | [Kết quả và bằng chứng] |
 
 ## 3. Kết quả theo vai trò
 
-| Nhiệm vụ đã thực hiện | File/hàm/artifact liên quan | Kết quả bàn giao       | Cách xác minh         |
-| --------------------------- | ----------------------------- | ------------------------- | ----------------------- |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
-| [Mô tả cụ thể] | [Đường dẫn file] | [Artifact/metrics/report] | [Lệnh/artifact] |
+| Nhiệm vụ đã thực hiện | File/hàm/artifact liên quan | Kết quả bàn giao       | Cách xác minh  |
+| --------------------------- | ----------------------------- | ------------------------- | ---------------- |
+| [Mô tả cụ thể]          | [Đường dẫn file]          | [Artifact/metrics/report] | [Lệnh/artifact] |
+| [Mô tả cụ thể]          | [Đường dẫn file]          | [Artifact/metrics/report] | [Lệnh/artifact] |
 
 Nêu một output cụ thể mà phần việc của bạn tạo ra hoặc giúp xác minh:
 
