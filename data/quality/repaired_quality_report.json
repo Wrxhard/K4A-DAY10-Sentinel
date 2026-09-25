@@ -1,0 +1,212 @@
+{
+  "success": true,
+  "results": {
+    "success": true,
+    "results": [
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_table_row_count_to_be_between",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "min_value": 5,
+            "max_value": 5000
+          },
+          "meta": {},
+          "id": "b452d384-aa14-49d3-a47c-95fa159a8585",
+          "severity": "critical"
+        },
+        "result": {
+          "observed_value": 24
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "column": "paper_id"
+          },
+          "meta": {},
+          "id": "e5c1bd5b-a531-4bf4-8494-22b79ff65cda",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 24,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_be_unique",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "column": "paper_id"
+          },
+          "meta": {},
+          "id": "ca9a2a76-5004-4cd7-8521-a112fba38b62",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 24,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "column": "title"
+          },
+          "meta": {},
+          "id": "19b89d7d-97ea-419b-bd66-74b8a97ab04f",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 24,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_values_to_not_be_null",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "column": "text_for_embedding"
+          },
+          "meta": {},
+          "id": "23f5bbf8-8a6b-4712-86ea-d630db4aa1ab",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 24,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      },
+      {
+        "success": true,
+        "expectation_config": {
+          "type": "expect_column_value_lengths_to_be_between",
+          "kwargs": {
+            "batch_id": "papers_source-papers_asset",
+            "column": "summary",
+            "min_value": 30
+          },
+          "meta": {},
+          "id": "584b2475-e503-446f-9af5-cf69e3e601b8",
+          "severity": "critical"
+        },
+        "result": {
+          "element_count": 24,
+          "unexpected_count": 0,
+          "unexpected_percent": 0.0,
+          "partial_unexpected_list": [],
+          "missing_count": 0,
+          "missing_percent": 0.0,
+          "unexpected_percent_total": 0.0,
+          "unexpected_percent_nonmissing": 0.0,
+          "partial_unexpected_counts": [],
+          "partial_unexpected_index_list": []
+        },
+        "meta": {},
+        "exception_info": {
+          "raised_exception": false,
+          "exception_traceback": null,
+          "exception_message": null
+        }
+      }
+    ],
+    "suite_name": "papers_suite",
+    "suite_parameters": {},
+    "statistics": {
+      "evaluated_expectations": 6,
+      "successful_expectations": 6,
+      "unsuccessful_expectations": 0,
+      "success_percent": 100.0
+    },
+    "meta": {
+      "great_expectations_version": "1.23.1",
+      "batch_spec": {
+        "batch_data": "PandasDataFrame"
+      },
+      "batch_markers": {
+        "ge_load_time": "20260925T110247.128543Z",
+        "pandas_data_fingerprint": "c9521819f5586381c2d68575b93992c5"
+      },
+      "active_batch_definition": {
+        "datasource_name": "papers_source",
+        "data_connector_name": "fluent",
+        "data_asset_name": "papers_asset",
+        "batch_identifiers": {
+          "dataframe": "<DATAFRAME>"
+        }
+      },
+      "validation_id": "484ec8b0-4d00-4e79-a4f9-8d2c2dcae5fe",
+      "checkpoint_id": null,
+      "run_id": {
+        "run_name": null,
+        "run_time": "2026-09-25T18:02:47.274545+07:00"
+      },
+      "validation_time": "2026-09-25T11:02:47.274545+00:00",
+      "batch_parameters": {
+        "dataframe": "<DATAFRAME>"
+      }
+    },
+    "id": null
+  }
+}
