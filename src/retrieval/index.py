@@ -8,7 +8,7 @@ import chromadb
 import pandas as pd
 
 from core.config import Settings
-from core.utils import read_json, safe_slug, write_json
+from core.utils import infer_research_category, read_json, safe_slug, write_json
 from retrieval.embeddings import MiniLMEmbeddings
 
 
@@ -26,25 +26,32 @@ class LocalEmbeddingIndex:
         self,
         settings: Settings,
         collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
         self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
+        self.persist_path.mkdir(parents=True, exist_ok=True)
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        self.collection = self.client.get_or_create_collection(
+            name=collection_name,
+            configuration={"hnsw": {"space": "cosine"}},
+        )
+        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in self.documents}
+        self.documents_by_title = {document["title"].lower(): document for document in self.documents}
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
         records = df.to_dict(orient="records")
         documents: list[dict[str, Any]] = []
         for index, row in enumerate(records):
+            categories = str(row.get("categories_joined", "")).strip() or infer_research_category(
+                str(row["title"]), str(row["summary"])
+            )
             documents.append(
                 {
                     "record_id": f"{row['paper_id']}::{index}",
@@ -56,7 +63,7 @@ class LocalEmbeddingIndex:
                         "title": row["title"],
                         "published": row["published"],
                         "authors_joined": row["authors_joined"],
-                        "categories_joined": row["categories_joined"],
+                        "categories_joined": categories,
                         "summary": row["summary"],
                         "abs_url": row["abs_url"],
                         "pdf_url": row["pdf_url"],
@@ -164,6 +171,17 @@ class LocalEmbeddingIndex:
                 )
             )
         return scored
+
+    def build_from_clean(self) -> "LocalEmbeddingIndex":
+        """Build the baseline collection from the configured clean JSON artifact."""
+        dataframe = pd.read_json(self.settings.paths.clean_json)
+        rebuilt = type(self).build(dataframe, self.settings, self.settings.paths.embeddings_json)
+        self.__dict__.update(rebuilt.__dict__)
+        return self
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        """Compatibility alias for the CP2 terminology."""
+        return self.search(query, top_k=top_k)
 
     def lookup(self, value: str) -> dict[str, Any] | None:
         needle = value.strip().lower()
