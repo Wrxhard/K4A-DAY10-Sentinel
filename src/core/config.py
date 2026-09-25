@@ -41,6 +41,11 @@ class Paths:
     repaired_answers: Path
     comparison_report: Path
 
+    @property
+    def test_set_json(self) -> Path:
+        """Compatibility alias used by the Checkpoint 2 verification command."""
+        return self.eval_testset
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -114,7 +119,7 @@ def load_settings(project_dir: Path | None = None) -> Settings:
 
     return Settings(
         llm_provider=os.getenv("LLM_PROVIDER", "gemini"),
-        model_name=os.getenv("LLM_MODEL", "gemini-2.5-flash"),
+        model_name=os.getenv("LLM_MODEL", "gemini-3.8-flash"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),
