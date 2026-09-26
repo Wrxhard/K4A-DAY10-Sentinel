@@ -38,10 +38,12 @@ def corrupt_clean_dataframe(df: pd.DataFrame, output_log_path) -> pd.DataFrame:
         return ids.astype(str).tolist()
 
     scenario_count = max(1, min(4, len(corrupted)))
+    # Stale date needs to affect >25% of total rows so freshness check fails
+    stale_count = max(scenario_count, math.ceil(input_rows * 0.35))
     blank_ids = selected_ids(0, scenario_count)
     noise_ids = selected_ids(scenario_count, scenario_count)
     truncate_ids = selected_ids(scenario_count * 2, scenario_count)
-    stale_ids = selected_ids(scenario_count * 3, scenario_count)
+    stale_ids = selected_ids(0, min(stale_count, len(corrupted)))
 
     corrupted.loc[: scenario_count - 1, "summary"] = ""
     noise_start = scenario_count
@@ -57,12 +59,11 @@ def corrupt_clean_dataframe(df: pd.DataFrame, output_log_path) -> pd.DataFrame:
         corrupted.loc[truncate_start : truncate_end - 1, "title"].astype(str).str.slice(0, 8)
     )
 
-    stale_start = scenario_count * 3
-    stale_end = min(stale_start + scenario_count, len(corrupted))
+    stale_end_idx = min(stale_count, len(corrupted))
     stale_dates = pd.to_datetime(
-        corrupted.loc[stale_start : stale_end - 1, "published"], errors="coerce"
+        corrupted.loc[: stale_end_idx - 1, "published"], errors="coerce"
     ) - pd.DateOffset(years=5)
-    corrupted.loc[stale_start : stale_end - 1, "published"] = stale_dates.dt.strftime("%Y-%m-%d")
+    corrupted.loc[: stale_end_idx - 1, "published"] = stale_dates.dt.strftime("%Y-%m-%d")
 
     # Rebuild derived fields after the field-level mutations.
     corrupted["title"] = corrupted["title"].fillna("").astype(str)

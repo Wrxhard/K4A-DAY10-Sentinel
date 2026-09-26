@@ -13,7 +13,7 @@
             "max_value": 5000
           },
           "meta": {},
-          "id": "a8203070-712f-4b56-a3db-fe4a4a548965",
+          "id": "54943710-cc9a-4570-b458-bbe596b74915",
           "severity": "critical"
         },
         "result": {
@@ -35,7 +35,7 @@
             "column": "paper_id"
           },
           "meta": {},
-          "id": "e74d6fcd-191e-487d-b188-3e7bac6c564c",
+          "id": "386ce3ea-8dce-4752-b37e-6ab888336341",
           "severity": "critical"
         },
         "result": {
@@ -62,7 +62,7 @@
             "column": "paper_id"
           },
           "meta": {},
-          "id": "cacd902f-86a8-44f3-a2b4-8676cf0d867c",
+          "id": "7a347fc8-01f5-48f7-ba2a-0966fe50eba1",
           "severity": "critical"
         },
         "result": {
@@ -136,7 +136,7 @@
             "column": "title"
           },
           "meta": {},
-          "id": "549a2cb9-7791-4804-b637-19a180f6f700",
+          "id": "a2827c37-d9cb-4de9-b21e-db907860d5c1",
           "severity": "critical"
         },
         "result": {
@@ -163,7 +163,7 @@
             "column": "text_for_embedding"
           },
           "meta": {},
-          "id": "82f1c202-783c-4df5-8e6e-bd5f3aeffb55",
+          "id": "55ef28f9-6cf1-4140-bad4-81f6fd14e1e4",
           "severity": "critical"
         },
         "result": {
@@ -191,7 +191,7 @@
             "min_value": 30
           },
           "meta": {},
-          "id": "05df45e8-3699-4f6b-93b7-d14fded9379b",
+          "id": "fa97f6fb-3387-490d-ae73-11fd7aae98f2",
           "severity": "critical"
         },
         "result": {
@@ -251,8 +251,8 @@
         "batch_data": "PandasDataFrame"
       },
       "batch_markers": {
-        "ge_load_time": "20260925T105856.355593Z",
-        "pandas_data_fingerprint": "a50e8c07f5b35536445edaea57a1173c"
+        "ge_load_time": "20260925T164447.681945Z",
+        "pandas_data_fingerprint": "370b0d314afb6c7a533ad4f5ae96a824"
       },
       "active_batch_definition": {
         "datasource_name": "papers_source",
@@ -262,13 +262,13 @@
           "dataframe": "<DATAFRAME>"
         }
       },
-      "validation_id": "2e42c41e-9d46-4d19-9d70-27c8796fd51e",
+      "validation_id": "147c362d-5d2c-414a-b86a-b8b163a5e23a",
       "checkpoint_id": null,
       "run_id": {
         "run_name": null,
-        "run_time": "2026-09-25T17:58:56.406592+07:00"
+        "run_time": "2026-09-25T23:44:47.831483+07:00"
       },
-      "validation_time": "2026-09-25T10:58:56.406592+00:00",
+      "validation_time": "2026-09-25T16:44:47.831483+00:00",
       "batch_parameters": {
         "dataframe": "<DATAFRAME>"
       }

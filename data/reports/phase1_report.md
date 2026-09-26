@@ -18,7 +18,7 @@
 | `retrieval_hit_rate` | 1.0000 |
 | `mean_token_f1` | 0.7073 |
 | `judge_accuracy` | 0.6000 |
-| `mean_judge_score` | 3.4000 |
+| `mean_judge_score` | 3.6000 |
 | `ragas` | Set RUN_RAGAS=1 to enable the slower Ragas pass. |
 
 ## Data quality

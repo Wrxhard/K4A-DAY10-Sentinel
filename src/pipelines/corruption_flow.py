@@ -77,6 +77,10 @@ def main() -> None:
         paths.repaired_answers,
     )
 
+    # Load baseline quality and freshness for full three-state comparison
+    baseline_quality = read_json(paths.baseline_quality_report) if paths.baseline_quality_report.exists() else None
+    baseline_freshness = read_json(paths.freshness_report) if paths.freshness_report.exists() else None
+
     generate_corruption_report(
         paths.comparison_report,
         baseline_metrics,
@@ -86,6 +90,8 @@ def main() -> None:
         repaired_quality,
         corrupted_freshness,
         repaired_freshness,
+        baseline_quality=baseline_quality,
+        baseline_freshness=baseline_freshness,
     )
 
     print(f"Corruption flow complete: {len(corrupted)} corrupted rows")
