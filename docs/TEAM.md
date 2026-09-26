@@ -37,4 +37,4 @@
 - Bàn giao `data/results/corruption_log.json`, kết quả corrupted/repaired và phối hợp lập `data/reports/corruption_report.md`.
 - Chi tiết phần việc cá nhân: [report/individual_report.md](../report/individual_report.md).
 
-Nguồn phân công: [báo cáo nhóm](../report/group_report.md). Email và báo cáo cá nhân của ba thành viên đầu chưa có trong repository.
+Nguồn phân công: [báo cáo nhóm](../report/group_report.md).
