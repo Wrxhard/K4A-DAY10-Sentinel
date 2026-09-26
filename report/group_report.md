@@ -15,7 +15,7 @@
 | --: | --- | --- | --- | --- |
 | 1 | Nguyễn Trọng Phúc | 2A202602552 | Data Foundation & Quality (CP1, CP2) | `crossref.py`, `cleaning.py`, `quality.py`, `testset.py` |
 | 2 | Nguyễn Văn Huy | 2A202602428 | RAG & Vector Index (CP2) | `index.py`, `agent.py`, `embeddings.py` |
-| 3 | Vương (Vuog23) | — | Observability & Baseline Pipeline (CP3) | `reporting.py`, `phase1.py` |
+| 3 | Nguyễn Triều Vương (Vuog23) | 2A202602422 | Observability & Baseline Pipeline (CP3) | `reporting.py`, `phase1.py` |
 | 4 | Nguyễn Quốc Đạt | 2A202602369 | Corruption & Repair Integration (CP5) | `corruption.py`, `corruption_flow.py` |
 
 ## 2. Tóm tắt kết quả
